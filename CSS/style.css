@@ -7,6 +7,16 @@ body * {
     box-sizing: border-box;
 }
 
+ul {
+    list-style-type: none;
+}
+
+h2 {
+    font-family: Yeseva One;
+    font-style: normal;
+    font-weight: normal;
+}
+
 .container {
     max-width: 1256px;
     margin: 0 auto;
@@ -23,11 +33,12 @@ body * {
     align-items: center;
 }
 
-.logo {
+.logo a {
     color: #E3B873;
     font-size: 11px;
     line-height: 15px;
     text-transform: uppercase;
+    text-decoration: none;
 }
 
 .header-navigation {
@@ -39,27 +50,39 @@ body * {
     margin-right: 47.09px;
 }
 
-.header-navigation__item a {
+.header-navigation__item a, #tel {
+    font-family: Nunito Sans;
+    font-size: 11px;
+    line-height: 15px;
     text-decoration: none;
     color: white;
     font-size: 11px;
     line-height: 15px;
+    position: relative;
 }
 
-.header-navigation__item span {
-    text-decoration: none;
-    color: #E3B873;
-    font-size: 11px;
-    line-height: 15px;
+.header-navigation__item a::before, #tel::before, .projects_list_item a::before, .fantasies_area_list a::before {
+    content: '';
+    bottom: -3px;
+    left: 0;
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: #E3B873;
+    transition: 0.2s;
+    transform: scale(0);
 }
 
-.tel {
-    color: #E3B873;
-    font-family: Nunito Sans;
-    font-size: 11px;
-    line-height: 15px;
-    text-decoration-line: underline;
+.header-navigation__item a:hover:before, #tel:hover:before, .projects_list_item a:hover:before, .fantasies_area_list a:hover:before {
+    width: 100%;
+    transform: scale(1);
 }
+
+.header-navigation__item a:hover, #tel:hover, .projects_list_item a:hover, .fantasies_area_list a:hover {
+    color: #E3B873;
+}
+
+/* стилизация кнопок */
 
 .button {
     background: #E3B873;
@@ -76,7 +99,47 @@ body * {
     font-size: 11px;
     line-height: 15px;
     text-align: center;
+    cursor: pointer;
 }
+
+#calculate {
+    padding: 19px 45px;
+    text-transform: uppercase;
+    font-size: 11px;
+    line-height: 15px;
+    margin-right: 20px;
+    margin-left: 42px;
+}
+
+.new_button_2 {
+    background: transparent;
+    border: 1px solid #FFFFFF;
+    font-family: Nunito Sans;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 15px;
+    color: white;
+    border-radius: 2px;
+    padding: 19px 25px;
+    cursor: pointer;
+}
+
+#submit {
+    padding: 20px 75px;
+    color: white;
+    font-size: 11px;
+    line-height: 15px;
+}
+
+#call {
+    padding: 14px 43px;
+    color: white;
+    font-size: 13px;
+    line-height: 21px;
+}
+
+/* ----------------------------------- */
 
 .hero {
     background-image: url('../images/hero.jpg');
@@ -129,37 +192,7 @@ body * {
     color: #E3B873;
 }
 
-.new_button_1 {
-    background: #E3B873;
-    font-family: Nunito Sans;
-    font-style: italic;
-    font-weight: normal;
-    box-shadow: 0px 5px 15px rgba(227, 184, 115, 0.2);
-    border-radius: 2px;
-    outline: 0;
-    border: 0;
-    padding: 19px 45px;
-    color: white;
-    text-transform: uppercase;
-    font-size: 11px;
-    line-height: 15px;
-    text-align: center;
-    margin-right: 20px;
-    margin-left: 42px;
-}
 
-.new_button_2 {
-    background: transparent;
-    border: 1px solid #FFFFFF;
-    font-family: Nunito Sans;
-    font-style: italic;
-    font-weight: normal;
-    font-size: 11px;
-    line-height: 15px;
-    color: white;
-    border-radius: 2px;
-    padding: 19px 25px;
-}
 
 .projects {
     height: 1100px;
@@ -178,11 +211,10 @@ body * {
 }
 
 .projects_list {
-    position: absolute;
     padding-left: 515px;
 }
 
-.projects_list a {
+.projects_list_item a {
     margin-right: 60.5px;
     font-family: Yeseva One;
     font-style: normal;
@@ -192,23 +224,13 @@ body * {
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.3);
     text-decoration: none;
-}
-
-.projects_list span {
-    color: #E3B873;
-}
-
-.projects hr {
-    position: absolute;
-    border: 0.5px solid #E3B873;
-    width: 194px;
-    margin-top: 25px;
+    position: relative;
 }
 
 .projects_content {
     display: flex;
     flex-direction: row-reverse;
-    padding-top: 80px;
+    padding-top: 20px;
     margin-right: 60px;
 }
 
@@ -244,7 +266,7 @@ body * {
 }
 
 .projects_block_12 .projects_block_34, .title3 {
-    margin-left: 0px;    
+    margin-left: 0px;
     font-family: Yeseva One;
     font-style: normal;
     font-weight: normal;
@@ -296,7 +318,13 @@ body * {
 }
 
 .projects_vector {
-    padding-top: 50px;
+    display: flex;
+    padding-top: 30px;
+    margin-left: 10px;
+}
+
+.right__arrow, .right__round, .center__round, .left__round {
+    padding-left: 20px;
 }
 
 .online_control {
@@ -309,6 +337,29 @@ body * {
     flex-direction: column;
     align-items: center;
     margin-top: -320px;
+}
+
+.online_control_text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.online_control_pic {
+    display: flex;
+    align-items: center;
+}
+
+.online_control_pic>img {
+    padding: 0 5px 0 5px;
+}
+
+.online_control_text>h2 {
+    font-size: 20px;
+    line-height: 28px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
 }
 
 .image1, .line {
@@ -378,21 +429,6 @@ body * {
     outline: none;
 }
 
-.new_button3 {
-    background: #E3B873;
-    font-family: Nunito Sans;
-    font-weight: normal;
-    box-shadow: 0px 5px 15px rgba(227, 184, 115, 0.2);
-    border-radius: 2px;
-    outline: 0;
-    border: 0;
-    padding: 20px 75px;
-    color: white;
-    text-transform: uppercase;
-    font-size: 11px;
-    line-height: 15px;
-    text-align: center;
-}
 
 /* Checkbox */
 
@@ -458,8 +494,23 @@ body * {
     margin-left: 2px;
 }
 
+/* --------------------------- */
+
 .types_of_repair_section {
     margin-top: 147px;
+}
+.types_of_repair_text {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.types_of_repair_text>h2 {
+    font-size: 20px;
+    line-height: 28px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #181818;
 }
 
 .examples {
@@ -517,7 +568,7 @@ body * {
 
 .board {
     height: 54px;
-    width: 228px;   
+    width: 228px;
     background: #E3B873;
     box-shadow: 5px 5px 10px rgba(227, 184, 115, 0.3);
     margin-top: 30px;
@@ -546,27 +597,62 @@ body * {
 
 .request_leftblock {
     margin-top: 124px;
-    margin-left: -280px;
     height: 645px;
-    width: 1006px;
+    width: 830px;
+    margin-left: -115px;
     background-image: url(../images/back_img1.png);
     background-size: contain;
-    background-position: center;
     background-repeat: no-repeat;
 }
 
-.request_leftblock_svg {
+.request_leftblock_point_1 {
+    margin: 130px 0 0 70px;
     display: flex;
-    flex-direction: column;
-    margin-left: 380px;
-    padding-top: 90px;
+    align-items: center;
 }
 
-.request_leftblock_svg2, .request_leftblock_svg3,.request_leftblock_svg4 {
-    padding-top: 55px;
+.request_leftblock_point_2 {
+    margin: 90px 0 0 70px;
+    display: flex;
+    align-items: center;
+}
+
+.point__1 {
+    height: 50px;
+    width: 50px;
+    background-color: #E3B873;
+    border-radius: 50%;
+    margin-left: 200px;
+    border: 7px solid;
+    border-color: white;
+}
+
+.point__1 p{
+    font-family: Yeseva One;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 6px;
+}
+
+.point__text {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+    color: #363636;
+    padding-left: 10px;
 }
 
 /* request_правый блок */
+
+.request_rightblock{
+    padding-right: 0px;
+}
 
 .request_rightblock_blackform {
     width: 506px;
@@ -650,22 +736,6 @@ body * {
     color: #FFFFFF;
 }
 
-.new_button4 {
-    background: #E3B873;
-    font-family: Nunito Sans;
-    font-style: normal;
-    font-weight: normal;
-    box-shadow: 0px 5px 15px rgba(227, 184, 115, 0.15);
-    outline: 0;
-    border: 0;
-    padding: 14px 43px;
-    color: white;
-    text-transform: uppercase;
-    font-size: 13px;
-    line-height: 21px;
-    text-align: center;
-}
-
 .form-button1 {
     padding-top: 27px;
     padding-left: 187px;
@@ -712,11 +782,13 @@ body * {
     background-color: rgba(0, 0, 0, 0.7);
 }
 
+.fantasies_area {
+    position: relative;
+}
+
 .fantasies_area_text {
     margin-top: 137px;
     margin-left: 99px;
-    position: relative;
-    z-index: 1;
 }
 
 .fantasies_area_text h2 {
@@ -727,23 +799,15 @@ body * {
     line-height: 37px;
     text-transform: uppercase;
     color: #E3B873;
+    z-index: 1;
+    position: relative;
 }
 
-.american {
-    font-family: Nunito Sans;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 20px;
-    line-height: 38px;
-    color: #E3B873;
-    margin-top: 35px;
+.fantasies_area_ul {
+    margin: 35px 0 0 60px;
 }
 
-.american_svg {
-    margin-top: -40px;
-}
-
-.american_list p{
+.fantasies_area_list a {
     display: flex;
     flex-direction: column;
     font-family: Nunito Sans;
@@ -753,11 +817,14 @@ body * {
     line-height: 38px;
     color: #FFFFFF;
     margin: 12px 0 0 0;
+    text-decoration: none;
+    z-index: 1;
+    position: relative;
 }
 
 .pictures1 {
     z-index: 1;
-    margin-left: 210px;
+    margin-left: 220px;
     margin-top: -40px;
 }
 
@@ -775,26 +842,8 @@ body * {
     margin-top: 35px;
 }
 
-.our_clients {
-    font-family: Yeseva One;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 20px;
-    line-height: 28px;
-    text-align: center;
-    text-transform: uppercase;
-    color: #181818;
-    padding-top: 120px;
-}
-
-.hands {
-    display: flex;
-    flex-direction: row;
-    padding: 15px 0 0 575px;
-}
-
-.hands1 {
-    padding: 0 10px 0 10px;
+.clients {
+    margin-top: 100px;
 }
 
 .text1{
@@ -805,7 +854,7 @@ body * {
     line-height: 29px;
     text-align: center;
     color: #363636;
-    padding-top: 20px;    
+    padding-top: 20px;
 }
 
 /* блок с отзывами */
@@ -930,8 +979,7 @@ body * {
     width: 883px;
     background-color: #131313;
     position: absolute;
-    margin-left: 288px;
-    margin-top: -230px;
+    margin: -230px auto 0;
     z-index: 1;
 }
 
