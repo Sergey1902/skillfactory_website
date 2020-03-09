@@ -328,7 +328,7 @@ h2 {
 }
 
 .online_control {
-    height: 5000px;
+    height: 5110px;
     color: #FFFFFF;
 }
 
@@ -368,15 +368,16 @@ h2 {
     align-items: center;
 }
 
-.image1 svg {
+.play {
     margin-top: -360px;
 }
 
-.line {
+.line1 {
     padding-top: 237px;
+    text-align: center;
 }
 
-.line p{
+.line1 p{
     font-family: Nunito Sans;
     font-style: normal;
     font-weight: normal;
@@ -807,9 +808,11 @@ align-items: center;
     margin: 35px 0 0 60px;
 }
 
-.fantasies_area_list a {
-    display: flex;
-    flex-direction: column;
+.fantasies_area_list {
+    padding-top: 10px;
+}
+
+.fantasies_area_list a{
     font-family: Nunito Sans;
     font-style: normal;
     font-weight: normal;
@@ -927,7 +930,7 @@ align-items: center;
     padding: 0 0 0 15px;
 }
 
-.svg__line {
+.line {
     padding: 0 0 0 20px;
 }
 
@@ -937,9 +940,19 @@ align-items: center;
 
 .background__city {
     display: flex;
-    flex-direction: row;
     position: relative;
 }
+
+.city_right>img {
+    width: 720px; 
+    height: 450px;   
+}
+
+.city_left>img {
+    width: 720px; 
+    height: 450px;   
+}
+
 
 .city_overlay {
     content: '';
@@ -958,7 +971,6 @@ align-items: center;
     background-size: cover;
     background-repeat: no-repeat;
     height: 953px;
-    margin-top: 60px;
     position: relative;
 }
 
@@ -978,8 +990,8 @@ align-items: center;
     height: 445px;
     width: 883px;
     background-color: #131313;
-    position: absolute;
-    margin: -230px auto 0;
+    position: relative;
+    top: -230px;
     z-index: 1;
 }
 
@@ -994,6 +1006,11 @@ align-items: center;
     text-transform: uppercase;
     color: #FFFFFF;
     padding-top: 34px;
+}
+
+.question_wrapper {
+    max-width: 925px;
+    margin: 0 auto;
 }
 
 /* backform_buttons */
@@ -1092,6 +1109,11 @@ align-items: center;
 
 .questions__blackform__svg {
     margin: 30px 0 0 390px;
+    display: flex;
+}
+
+.insta_svg {
+    padding-left: 10px;
 }
 
 .questions__blackform__img {
